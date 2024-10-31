@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <style>
+    body {
+      background: #fafafa;
+    }
+
+    jsonresume-terminal {
+      display: block;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 1rem;
+      height:400px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit';
+    import '../jsonresume-terminal.js';
+
+    const header = 'Hello owc World!';
+    render(
+      html`
+        <jsonresume-terminal github-user="kyzrfranz" .header=${header}>
+          some light-dom
+        </jsonresume-terminal>
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>
