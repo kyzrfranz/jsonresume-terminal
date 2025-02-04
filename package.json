@@ -1,9 +1,9 @@
 {
-  "name": "jsonresume-terminal",
-  "description": "Webcomponent jsonresume-terminal following open-wc recommendations",
+  "name": "@kyzrfranz/jsonresume-terminal",
+  "description": "display your jsonresume in a terminal",
   "license": "MIT",
-  "author": "jsonresume-terminal",
-  "version": "0.0.0",
+  "author": "kyzrfranz",
+  "version": "1.0.2",
   "type": "module",
   "main": "index.js",
   "module": "index.js",

@@ -22,12 +22,15 @@ export class JsonresumeTerminal extends LitElement {
     this._commandHistory = [];
     this._historyIndex = -1;
     this.username = this._generateUserName();
+    console.log(this.greeting)
     this.commands = [
       { name: 'who', execute: () => this._showBasics() },
       { name: 'work list', execute: () => this._listWork() },
       { name: 'work show', execute: (args) => this._showWork(args) },
       { name: 'skills list', execute: () => this._listSkills() },
       { name: 'references list', execute: () => this._listReferences() },
+      { name: 'clear', execute: () => this._clear() },
+      { name: 'exit', execute: () => this._exit() },
       { name: 'help', execute: () => this._help() }
     ];
   }
@@ -118,6 +121,8 @@ Available Commands:
   work show           Display details of a specific work entry. Usage: work show <work.name>
   skills list         List all skills.
   references list     List all references.
+  clear               Clears the terminal.
+  exit                Ta!
   help                Show this help message.
 
 Usage:
@@ -150,6 +155,15 @@ ${basics.profiles ? basics.profiles.map(profile => `    - ${profile.network}: ${
     `;
   }
 
+  _clear() {
+    this._history = [];
+    this._input = '';
+  }
+
+  _exit() {
+    this.dispatchEvent(new CustomEvent('exit'));
+  }
+
 
   _listWork() {
     if (!this.resumeData.work || this.resumeData.work.length === 0) {
@@ -158,7 +172,7 @@ ${basics.profiles ? basics.profiles.map(profile => `    - ${profile.network}: ${
 
     return `
 Available Work Entries:
-${this.resumeData.work.map((entry, index) => `  ${index + 1}. ${entry.name} (${entry.company})`).join('\n')}
+${this.resumeData.work.map((entry, index) => `  ${index + 1}. ${entry.name} (${entry.position})`).join('\n')}
 
 Use "work show <id>" to display details of a specific entry.
     `;
