@@ -19,22 +19,21 @@
   </style>
 </head>
 <body>
-  <div id="demo">
-  </div>
+<div id="demo">
+</div>
 
-  <script type="module">
-    import { html, render } from 'lit';
-    import '../jsonresume-terminal.js';
-
-    const header = 'Hello owc World!';
-    render(
-      html`
-        <jsonresume-terminal github-user="kyzrfranz" .header=${header}>
-          some light-dom
-        </jsonresume-terminal>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
+<script type="module">
+  import { html, render } from 'lit';
+  import '@kyzrfranz/jsonresume-terminal';
+  console.log('jsonresume-terminal is', customElements.get('jsonresume-terminal'));
+  console.log('Hello from the demo!');
+  render(
+    html`
+      <jsonresume-terminal github-user="kyzrfranz"></jsonresume-terminal>
+    `,
+    document.querySelector('#demo')
+  );
+  console.log('Goodbye from the demo!');
+</script>
 </body>
 </html>
