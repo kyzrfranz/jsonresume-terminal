@@ -8,7 +8,7 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 
 ## Live Demo
 
-[www.thieber.de/terminal](www.thieber.de/terminal)
+[www.thieber.de/terminal](https://www.thieber.de/terminal)
 
 ## Installation
 
