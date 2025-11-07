@@ -5,6 +5,11 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 
 [![jsonresume-terminal](./img/terminal.png)](https://jsonresume.org/)
 
+
+## Live Demo
+
+[www.thieber.de/terminal](www.thieber.de/terminal)
+
 ## Installation
 
 ```bash
